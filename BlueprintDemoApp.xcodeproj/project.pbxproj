@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -19,6 +19,8 @@
 		A87760BA25CA5016007A5040 /* BlueprintDemoAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A87760B925CA5016007A5040 /* BlueprintDemoAppUITests.swift */; };
 		A8C5BBA125E0C3DD00346569 /* Movies.json in Resources */ = {isa = PBXBuildFile; fileRef = A8C5BBA025E0C3DD00346569 /* Movies.json */; };
 		A8C5BBC025E19E2000346569 /* MovieTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C5BBBF25E19E2000346569 /* MovieTableViewCell.swift */; };
+		A8C5BBC625E1AB5700346569 /* SwiftyJSON in Frameworks */ = {isa = PBXBuildFile; productRef = A8C5BBC525E1AB5700346569 /* SwiftyJSON */; };
+		A8C5BBCB25E1AC1000346569 /* MovieParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C5BBCA25E1AC1000346569 /* MovieParser.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +59,7 @@
 		A87760BB25CA5016007A5040 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A8C5BBA025E0C3DD00346569 /* Movies.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Movies.json; sourceTree = "<group>"; };
 		A8C5BBBF25E19E2000346569 /* MovieTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieTableViewCell.swift; sourceTree = "<group>"; };
+		A8C5BBCA25E1AC1000346569 /* MovieParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieParser.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +67,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A8C5BBC625E1AB5700346569 /* SwiftyJSON in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -111,6 +115,7 @@
 				A8C5BBA025E0C3DD00346569 /* Movies.json */,
 				A877609625CA5016007A5040 /* SceneDelegate.swift */,
 				A85D054525CCA2F30014E9E0 /* TableViewController.swift */,
+				A8C5BBCA25E1AC1000346569 /* MovieParser.swift */,
 				A8C5BBBF25E19E2000346569 /* MovieTableViewCell.swift */,
 				A877609825CA5016007A5040 /* HomeViewController.swift */,
 				A877609D25CA5016007A5040 /* Assets.xcassets */,
@@ -164,6 +169,9 @@
 			dependencies = (
 			);
 			name = BlueprintDemoApp;
+			packageProductDependencies = (
+				A8C5BBC525E1AB5700346569 /* SwiftyJSON */,
+			);
 			productName = BlueprintDemoApp;
 			productReference = A877609125CA5016007A5040 /* BlueprintDemoApp.app */;
 			productType = "com.apple.product-type.application";
@@ -235,6 +243,9 @@
 				Base,
 			);
 			mainGroup = A877608825CA5015007A5040;
+			packageReferences = (
+				A8C5BBC425E1AB5700346569 /* XCRemoteSwiftPackageReference "SwiftyJSON" */,
+			);
 			productRefGroup = A877609225CA5016007A5040 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -280,6 +291,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A877609C25CA5016007A5040 /* BlueprintDemoApp.xcdatamodeld in Sources */,
+				A8C5BBCB25E1AC1000346569 /* MovieParser.swift in Sources */,
 				A877609525CA5016007A5040 /* AppDelegate.swift in Sources */,
 				A8C5BBC025E19E2000346569 /* MovieTableViewCell.swift in Sources */,
 				A877609725CA5016007A5040 /* SceneDelegate.swift in Sources */,
@@ -613,6 +625,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		A8C5BBC425E1AB5700346569 /* XCRemoteSwiftPackageReference "SwiftyJSON" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SwiftyJSON/SwiftyJSON.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		A8C5BBC525E1AB5700346569 /* SwiftyJSON */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A8C5BBC425E1AB5700346569 /* XCRemoteSwiftPackageReference "SwiftyJSON" */;
+			productName = SwiftyJSON;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		A877609A25CA5016007A5040 /* BlueprintDemoApp.xcdatamodeld */ = {

@@ -7,14 +7,11 @@
 
 import UIKit
 
-// What if we have thousands of movies? We can help define them and pass their data using basic structs.
-struct Movie {
-    let title, director, releaseDate, rating: String
-    let languages, categories, companies: [String]
-}
-
 class MovieTableViewController: UITableViewController {
 
+    var movieParser = Movies()
+    var movieData: [Movie] = []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -23,6 +20,9 @@ class MovieTableViewController: UITableViewController {
         self.tableView.register(MovieTableViewCell.self, forCellReuseIdentifier: MovieTableViewCell.cellId)
         
         // ////////////// //
+        
+        fetchData()
+        reloadPage()
         
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -40,7 +40,7 @@ class MovieTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 10
+        return movieData.count
     }
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -55,6 +55,12 @@ class MovieTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: MovieTableViewCell.cellId, for: indexPath) as! MovieTableViewCell
 
         // Configure the cell...
+        let index = indexPath.row
+        let movie = self.movieData[index]
+        cell.title.text = movie.title
+        cell.overview.text = movie.overview
+        cell.rating.text = movie.rating + "/10"
+        cell.releaseDate.text = movie.releaseDate
         cell.setupViews()
         
         return cell
@@ -105,6 +111,26 @@ class MovieTableViewController: UITableViewController {
     }
     */
 
+}
+
+// Extension for fetching data
+extension MovieTableViewController {
+    
+    func fetchData() {
+        movieParser.getData()
+        self.movieData = movieParser.getMovies()
+        print(self.movieData.count)
+    }
+    
+    func reloadPage() {
+        self.tableView.reloadData()
+    }
+    
+}
+
+// Extension for configuring UI
+extension MovieTableViewController {
+    
 }
 
 // /////////////////////////////////////// //
