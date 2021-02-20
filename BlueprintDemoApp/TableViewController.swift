@@ -7,6 +7,12 @@
 
 import UIKit
 
+// What if we have thousands of movies? We can help define them and pass their data using basic structs.
+struct Movie {
+    let title, director, releaseDate, rating: String
+    let languages, categories, companies: [String]
+}
+
 class MovieTableViewController: UITableViewController {
 
     override func viewDidLoad() {
@@ -14,7 +20,7 @@ class MovieTableViewController: UITableViewController {
         
         // ** Let's register a UITableViewCell here
         // YOUR CODE HERE //
-        
+        self.tableView.register(MovieTableViewCell.self, forCellReuseIdentifier: MovieTableViewCell.cellId)
         
         // ////////////// //
         
@@ -29,12 +35,16 @@ class MovieTableViewController: UITableViewController {
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        return 10
+    }
+    
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 200
     }
 
     // This function returns a type of cell that will be displayed at the given indexPath (row, column).
@@ -42,10 +52,11 @@ class MovieTableViewController: UITableViewController {
         // As you scroll down a tableView, the cells that appear or that will appear will be "dequed", which means that they will be processed and returned as a specific instance of a UITableViewCell.
         // It's important to note that not all cells are dequed at once. Only the cells that are about to be scrolled to/displayed on screen are dequed. This helps with performance.
         // Also note the "withIdentifier" parameter here. Each UITableViewCell will have a unique identifier, which we'll get to later in this session.
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: MovieTableViewCell.cellId, for: indexPath) as! MovieTableViewCell
 
         // Configure the cell...
-
+        cell.setupViews()
+        
         return cell
     }
 

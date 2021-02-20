@@ -18,6 +18,7 @@
 		A87760AF25CA5016007A5040 /* BlueprintDemoAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A87760AE25CA5016007A5040 /* BlueprintDemoAppTests.swift */; };
 		A87760BA25CA5016007A5040 /* BlueprintDemoAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A87760B925CA5016007A5040 /* BlueprintDemoAppUITests.swift */; };
 		A8C5BBA125E0C3DD00346569 /* Movies.json in Resources */ = {isa = PBXBuildFile; fileRef = A8C5BBA025E0C3DD00346569 /* Movies.json */; };
+		A8C5BBC025E19E2000346569 /* MovieTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C5BBBF25E19E2000346569 /* MovieTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +56,7 @@
 		A87760B925CA5016007A5040 /* BlueprintDemoAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlueprintDemoAppUITests.swift; sourceTree = "<group>"; };
 		A87760BB25CA5016007A5040 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A8C5BBA025E0C3DD00346569 /* Movies.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Movies.json; sourceTree = "<group>"; };
+		A8C5BBBF25E19E2000346569 /* MovieTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +111,7 @@
 				A8C5BBA025E0C3DD00346569 /* Movies.json */,
 				A877609625CA5016007A5040 /* SceneDelegate.swift */,
 				A85D054525CCA2F30014E9E0 /* TableViewController.swift */,
+				A8C5BBBF25E19E2000346569 /* MovieTableViewCell.swift */,
 				A877609825CA5016007A5040 /* HomeViewController.swift */,
 				A877609D25CA5016007A5040 /* Assets.xcassets */,
 				A87760A225CA5016007A5040 /* LaunchScreen.storyboard */,
@@ -278,6 +281,7 @@
 			files = (
 				A877609C25CA5016007A5040 /* BlueprintDemoApp.xcdatamodeld in Sources */,
 				A877609525CA5016007A5040 /* AppDelegate.swift in Sources */,
+				A8C5BBC025E19E2000346569 /* MovieTableViewCell.swift in Sources */,
 				A877609725CA5016007A5040 /* SceneDelegate.swift in Sources */,
 				A85D054625CCA2F30014E9E0 /* TableViewController.swift in Sources */,
 				A877609925CA5016007A5040 /* HomeViewController.swift in Sources */,
