@@ -20,7 +20,7 @@ In `HomeViewController.swift`, we build a single-view app, demonstrating the use
 In this session, we begin by building a UITableViewController, which will be used to display movie data. We create a sample MovieViewCell that displays a movie's poster image, title, release date, and rating.
 
 ## Session 3
-This session focuses on managing and passing data between consecutive views. We create a new object `Movies` that holds an array of `Movie` structs. An object of `Movies` can also fetch movie data from [The Movie Database (tmdb)](https://www.themoviedb.org) and parse the JSON response with [SwiftyJSON](https://github.com/SwiftyJSON/SwiftyJSON). Our table view displays the movie data stored in our `Movies` object.
+This session focuses on managing and passing data between consecutive views. We create a new object `Movies` that holds an array of `Movie` structs. We provide a json file of movie data provided by the [Movie Database API](https://www.themoviedb.org/documentation/api) and parse the data using [SwiftyJSON](https://github.com/SwiftyJSON/SwiftyJSON).  
 
-## Session 4 (optional)
-We hosted a supplementary session for students to ask more questions about iOS development and the Swift language. Some other important concepts we cover are singletons, Core Data, ....
+## Session 4
+We described the difference between asynchronous/synchronous processes and when to use each. We also added a demonstration of a delegate but did not integrate it into our codebase. To see a working implementation of a delegate, please check back later for a `httpRequest` branch.
