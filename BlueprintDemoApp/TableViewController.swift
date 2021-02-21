@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SwiftUI
 
 class MovieTableViewController: UITableViewController {
 
@@ -20,6 +21,9 @@ class MovieTableViewController: UITableViewController {
         self.tableView.register(MovieTableViewCell.self, forCellReuseIdentifier: MovieTableViewCell.cellId)
         
         // ////////////// //
+        
+        // Subscribing to a delegate (basically adding itself as a listener)
+        movieParser.loadDelegate = self
         
         fetchData()
         reloadPage()
@@ -46,6 +50,11 @@ class MovieTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 200
     }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let homeVC = HomeViewController()
+        navigationController?.pushViewController(homeVC, animated: true)
+    }
 
     // This function returns a type of cell that will be displayed at the given indexPath (row, column).
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -61,6 +70,22 @@ class MovieTableViewController: UITableViewController {
         cell.overview.text = movie.overview
         cell.rating.text = movie.rating + "/10"
         cell.releaseDate.text = movie.releaseDate
+        
+        // load image
+        let imageURL = URL(string: movie.image)!
+        DispatchQueue.global().async {
+            guard let data = try? Data(contentsOf: imageURL) else { return }
+            
+            DispatchQueue.main.async {
+                let img = UIImage(data: data)
+                cell.poster.contentMode = .scaleAspectFit
+                cell.poster.image = img
+            }
+            
+        }
+        
+        
+        
         cell.setupViews()
         
         return cell
@@ -128,9 +153,21 @@ extension MovieTableViewController {
     
 }
 
-// Extension for configuring UI
-extension MovieTableViewController {
+// Explained more in depth on "httpRequests" branch
+extension MovieTableViewController: LoadDelegate {
     
+    func didFinishLoadData(finished: Bool) {
+        if finished {
+            reloadPage()
+        } else {
+            resendRequest()
+        }
+    }
+    
+    func resendRequest() {
+        fetchData()
+        reloadPage()
+    }
 }
 
 // /////////////////////////////////////// //

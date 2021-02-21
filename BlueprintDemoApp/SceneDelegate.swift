@@ -24,15 +24,15 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // Create the SwiftUI view and set the context as the value for the managedObjectContext environment keyPath.
         // Add `@Environment(\.managedObjectContext)` in the views that will need the context.
         
-        let moviesTable = MovieTableViewController()
-        let navController = UINavigationController(rootViewController: moviesTable)
-
+//        let moviesTable = MovieTableViewController()
+//        let navController = UINavigationController(rootViewController: moviesTable)
+        let tabBar = TabBarController()
         // Use a UIHostingController as window root view controller.
         if let windowScene = scene as? UIWindowScene {
             let window = UIWindow(windowScene: windowScene)
             
             // Our rootVC is the first view we see when we open the app.
-            window.rootViewController = navController
+            window.rootViewController = tabBar
             self.window = window
             window.makeKeyAndVisible()
         }

@@ -14,10 +14,18 @@ struct Movie {
     let categories: [Int]
 }
 
+// Explained more in depth on "httpRequests" branch
+protocol LoadDelegate {
+    func didFinishLoadData(finished: Bool)
+    func resendRequest()
+}
+
 class Movies {
     
     private var movieData: [Movie] = []
     private let imageBaseURL = "https://image.tmdb.org/t/p/w500/"
+    
+    var loadDelegate: LoadDelegate?
     
     func getData() {
         guard let path = Bundle.main.path(forResource: "Movies", ofType: "json") else { return }
@@ -25,6 +33,17 @@ class Movies {
 
         do {
             let data = try Data(contentsOf: url)
+            
+            // Explained more in depth on "httpRequests" branch
+            /*
+             
+             if serverError == 404 {
+             // try to connect the server again
+                loadDelegate.resendRequest()
+             }
+             
+             */
+            
             parseData(data: data)
 
         }  catch {
@@ -55,6 +74,12 @@ class Movies {
                 let m = Movie(title: title, image: image, overview: overview, releaseDate: releaseDate, rating: rating, categories: genres)
                 movieData.append(m)
             }
+            
+            /* DispatchQueue.main.async {
+                // send signal here
+                // ONLY IF THIS FETCHING IS HAPPENING IN GLOBAL (BACKGROUND)
+            } */
+            self.loadDelegate!.didFinishLoadData(finished: true)
             
         } catch let jsonErr {
             print("decoding error")

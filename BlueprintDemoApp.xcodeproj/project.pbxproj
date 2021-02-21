@@ -21,6 +21,7 @@
 		A8C5BBC025E19E2000346569 /* MovieTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C5BBBF25E19E2000346569 /* MovieTableViewCell.swift */; };
 		A8C5BBC625E1AB5700346569 /* SwiftyJSON in Frameworks */ = {isa = PBXBuildFile; productRef = A8C5BBC525E1AB5700346569 /* SwiftyJSON */; };
 		A8C5BBCB25E1AC1000346569 /* MovieParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C5BBCA25E1AC1000346569 /* MovieParser.swift */; };
+		A8C5BBD625E1C8A700346569 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C5BBD525E1C8A700346569 /* TabBarController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,6 +61,7 @@
 		A8C5BBA025E0C3DD00346569 /* Movies.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Movies.json; sourceTree = "<group>"; };
 		A8C5BBBF25E19E2000346569 /* MovieTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieTableViewCell.swift; sourceTree = "<group>"; };
 		A8C5BBCA25E1AC1000346569 /* MovieParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieParser.swift; sourceTree = "<group>"; };
+		A8C5BBD525E1C8A700346569 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,6 +120,7 @@
 				A8C5BBCA25E1AC1000346569 /* MovieParser.swift */,
 				A8C5BBBF25E19E2000346569 /* MovieTableViewCell.swift */,
 				A877609825CA5016007A5040 /* HomeViewController.swift */,
+				A8C5BBD525E1C8A700346569 /* TabBarController.swift */,
 				A877609D25CA5016007A5040 /* Assets.xcassets */,
 				A87760A225CA5016007A5040 /* LaunchScreen.storyboard */,
 				A87760A525CA5016007A5040 /* Info.plist */,
@@ -291,6 +294,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A877609C25CA5016007A5040 /* BlueprintDemoApp.xcdatamodeld in Sources */,
+				A8C5BBD625E1C8A700346569 /* TabBarController.swift in Sources */,
 				A8C5BBCB25E1AC1000346569 /* MovieParser.swift in Sources */,
 				A877609525CA5016007A5040 /* AppDelegate.swift in Sources */,
 				A8C5BBC025E19E2000346569 /* MovieTableViewCell.swift in Sources */,
